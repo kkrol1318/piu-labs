@@ -1,0 +1,383 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --gap: 14px;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 1rem;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--gap);
+  padding: 12px;
+  border: 2px solid #e6a96b;
+  background: #fff7e3;
+  border-radius: 6px;
+}
+
+.item {
+  width: 100%;
+  max-width: 720px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  color: #fff;
+  text-align: center;
+  line-height: 1.2;
+  border: 1px solid transparent;
+  position: relative;
+}
+
+body:has(input[name='version'][value='blue']:checked) {
+  --c: #0a46ff;
+  --c-b: #0027b7;
+}
+body:has(input[name='version'][value='blue']:checked) .item {
+  background: var(--c);
+  border-color: var(--c-b);
+
+  width: 100%;
+
+  @media (min-width: 1024px) {
+    max-width: none;
+    flex: 1 1 320px;
+  }
+}
+body:has(input[name='version'][value='blue']:checked) .container {
+  @media (min-width: 1024px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: stretch;
+  }
+}
+
+body:has(input[name='version'][value='red']:checked) {
+  --c: #ff1f1f;
+  --c-b: #c81414;
+}
+body:has(input[name='version'][value='red']:checked) .item {
+  background: var(--c);
+  border-color: var(--c-b);
+  width: 100%;
+
+  @media (min-width: 1024px) {
+    max-width: none;
+    flex: 1 1 200px;
+  }
+}
+
+body:has(input[name='version'][value='red']:checked) .item:nth-child(2) {
+  order: 1;
+}
+body:has(input[name='version'][value='red']:checked) .item:nth-child(3) {
+  order: 2;
+}
+body:has(input[name='version'][value='red']:checked) .item:nth-child(1) {
+  order: 3;
+  font-weight: 700;
+}
+body:has(input[name='version'][value='red']:checked) .item:nth-child(4) {
+  order: 4;
+}
+body:has(input[name='version'][value='red']:checked) .item:nth-child(5) {
+  order: 5;
+}
+
+body:has(input[name='version'][value='red']:checked) .item:nth-child(1) {
+  @media (min-width: 1024px) {
+    flex: 2 1 360px;
+  }
+}
+
+body:has(input[name='version'][value='red']:checked) .item:nth-child(1)::after {
+  content: '(Jestem większy i na środku!)';
+  display: block;
+  font-size: 0.8em;
+  font-weight: 400;
+  margin-top: 4px;
+  opacity: 0.95;
+}
+
+body:has(input[name='version'][value='red']:checked) .container {
+  @media (min-width: 1024px) {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 1023.98px) {
+  body:has(input[name='version'][value='red']:checked) .container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  body:has(input[name='version'][value='red']:checked) .item {
+    flex: 1 1 310px;
+    max-width: 480px;
+  }
+  body:has(input[name='version'][value='red']:checked) .item:nth-child(1) {
+    flex-basis: 100%;
+    max-width: none;
+  }
+}
+
+body:has(input[name='version'][value='green']:checked) {
+  --c: #0d7a11;
+  --c-b: #0a5f0d;
+}
+body:has(input[name='version'][value='green']:checked) .item {
+  background: var(--c);
+  border-color: var(--c-b);
+  width: 100%;
+
+  @media (min-width: 1024px) {
+    max-width: none;
+    flex: 1 1 200px;
+  }
+}
+body:has(input[name='version'][value='green']:checked) .container {
+  @media (min-width: 1024px) {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 1023.98px) {
+  body:has(input[name='version'][value='green']:checked) .container {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  body:has(input[name='version'][value='green']:checked) .item:nth-child(5) {
+    width: 48%;
+  }
+  body:has(input[name='version'][value='green']:checked) .item:nth-child(4) {
+    width: 62%;
+  }
+  body:has(input[name='version'][value='green']:checked) .item:nth-child(3) {
+    width: 76%;
+  }
+  body:has(input[name='version'][value='green']:checked) .item:nth-child(2) {
+    width: 90%;
+  }
+  body:has(input[name='version'][value='green']:checked) .item:nth-child(1) {
+    width: 100%;
+  }
+}
+
+body:has(input[name='version'][value='green']:checked)
+  .item:nth-child(1)::before,
+body:has(input[name='version'][value='green']:checked)
+  .item:nth-child(1)::after {
+  content: '😀';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2em;
+  line-height: 0;
+  pointer-events: none;
+}
+body:has(input[name='version'][value='green']:checked)
+  .item:nth-child(1)::before {
+  left: 10px;
+}
+body:has(input[name='version'][value='green']:checked)
+  .item:nth-child(1)::after {
+  right: 10px;
+}
+
+@media (min-width: 1024px) {
+  body:has(input[name='version'][value='blue']:checked) .container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: var(--gap);
+  }
+
+  body:has(input[name='version'][value='blue']:checked) .item {
+    max-width: none;
+    flex: 0 1 calc((100% - 2 * var(--gap)) / 3);
+  }
+
+  body:has(input[name='version'][value='blue']:checked) .item:nth-child(n + 4) {
+    flex-basis: calc((100% - 1 * var(--gap)) / 2);
+  }
+}
+
+body:has(input[name='version'][value='blue']:checked) .item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 1024px) {
+  body:has(input[name='version'][value='green']:checked) .container {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    gap: var(--gap);
+  }
+
+  body:has(input[name='version'][value='green']:checked) .item {
+    max-width: none;
+    flex: 1 1 0;
+    border-style: solid;
+  }
+
+  body:has(input[name='version'][value='green']:checked) .item:nth-child(1) {
+    border-width: 10px;
+  }
+  body:has(input[name='version'][value='green']:checked) .item:nth-child(2) {
+    border-width: 8px;
+  }
+  body:has(input[name='version'][value='green']:checked) .item:nth-child(3) {
+    border-width: 6px;
+  }
+  body:has(input[name='version'][value='green']:checked) .item:nth-child(4) {
+    border-width: 4px;
+  }
+  body:has(input[name='version'][value='green']:checked) .item:nth-child(5) {
+    border-width: 2px;
+  }
+}
+@media (min-width: 1024px) {
+  body:has(input[name='version'][value='blue']:checked) .container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: var(--gap);
+  }
+  body:has(input[name='version'][value='blue']:checked) .item {
+    max-width: none;
+    flex: 0 1 calc((100% - 2 * var(--gap)) / 3) !important;
+  }
+}
+
+body:has(input[name='version'][value='green']:checked) .item {
+  background: #0d7a11;
+  border: none;
+  max-width: none;
+}
+
+@media (min-width: 1024px) {
+  body:has(input[name='version'][value='green']:checked) .container {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: var(--gap);
+  }
+
+  body:has(input[name='version'][value='green']:checked) .item {
+    flex: 0 0 auto;
+  }
+
+  body:has(input[name='version'][value='green']:checked) .item:nth-child(1) {
+    width: calc((100% - 4 * var(--gap)) * 0.34);
+  }
+  body:has(input[name='version'][value='green']:checked) .item:nth-child(2) {
+    width: calc((100% - 4 * var(--gap)) * 0.26);
+  }
+  body:has(input[name='version'][value='green']:checked) .item:nth-child(3) {
+    width: calc((100% - 4 * var(--gap)) * 0.2);
+  }
+  body:has(input[name='version'][value='green']:checked) .item:nth-child(4) {
+    width: calc((100% - 4 * var(--gap)) * 0.13);
+  }
+  body:has(input[name='version'][value='green']:checked) .item:nth-child(5) {
+    width: calc((100% - 4 * var(--gap)) * 0.07);
+  }
+}
+
+@media (max-width: 1023.98px) {
+  body:has(input[name='version'][value='green']:checked) .container {
+    flex-direction: column-reverse;
+    align-items: flex-end;
+    gap: var(--gap);
+  }
+
+  body:has(input[name='version'][value='green']:checked) .container {
+    --step: 12%;
+  }
+
+  body:has(input[name='version'][value='green']:checked) .item:nth-child(1) {
+    width: calc(100% - 0 * var(--step));
+  }
+  body:has(input[name='version'][value='green']:checked) .item:nth-child(2) {
+    width: calc(100% - 1 * var(--step));
+  }
+  body:has(input[name='version'][value='green']:checked) .item:nth-child(3) {
+    width: calc(100% - 2 * var(--step));
+  }
+  body:has(input[name='version'][value='green']:checked) .item:nth-child(4) {
+    width: calc(100% - 3 * var(--step));
+  }
+  body:has(input[name='version'][value='green']:checked) .item:nth-child(5) {
+    width: calc(100% - 4 * var(--step));
+  }
+}
+
+body:has(input[name='version'][value='green']:checked)
+  .item:nth-child(1)::before,
+body:has(input[name='version'][value='green']:checked)
+  .item:nth-child(1)::after {
+  content: '😀';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: clamp(1.6rem, 2.4vw, 2.2rem);
+  line-height: 0;
+  pointer-events: none;
+}
+body:has(input[name='version'][value='green']:checked)
+  .item:nth-child(1)::before {
+  left: 10px;
+}
+body:has(input[name='version'][value='green']:checked)
+  .item:nth-child(1)::after {
+  right: 10px;
+}
+
+.theme-picker {
+  background: #fff7e3;
+  border: 2px solid #e6a96b;
+  border-radius: 6px;
+  padding: 0.8rem 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.theme-picker legend {
+  font-weight: 600;
+  color: #000;
+  padding: 0 0.4rem;
+}
+
+.theme-picker label {
+  margin-right: 0.8rem;
+}
+@media (max-width: 1023.98px) {
+  body:has(input[name='version'][value='red']:checked) .item {
+    max-width: none;
+  }
+  body:has(input[name='version'][value='red']:checked) .item:nth-child(1) {
+    flex-basis: 100%;
+  }
+
+  @media (max-width: 640px) {
+    body:has(input[name='version'][value='red']:checked) .item {
+      flex-basis: 100%;
+    }
+  }
+}
