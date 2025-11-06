@@ -1,0 +1,251 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, sans-serif;
+}
+main,
+aside {
+  h1,
+  h2,
+  h3,
+  p {
+    margin-bottom: 1rem;
+    line-height: 1.5;
+  }
+}
+
+:root {
+  --bg-page: #e9ecef;
+  --card: #ffffff;
+  --header: #f39c12;
+  --nav: #1e73be;
+  --aside-top: #e7fff0;
+  --aside-bottom: #c9f1dd;
+  --footer: #2ab36b;
+  --text: #0e2233;
+  --radius: 6px;
+  --gap: 16px;
+}
+
+body {
+  background: var(--bg-page);
+  color: var(--text);
+}
+
+.container {
+  display: grid;
+  gap: var(--gap);
+  grid-template-areas:
+    'header'
+    'nav'
+    'main'
+    'aside'
+    'footer';
+
+  padding: 12px;
+  max-width: 1200px;
+  margin-inline: auto;
+}
+
+header {
+  grid-area: header;
+  background: var(--header);
+  color: #fff;
+  border-radius: var(--radius);
+  padding: 12px 16px;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  @media (min-width: 1024px) {
+    padding: 14px 18px;
+  }
+}
+
+header .logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  color: #000;
+  border-radius: 8px;
+  padding: 0 16px;
+  height: 40px;
+  font-weight: 700;
+  font-size: 0;
+}
+
+header .logo::before {
+  content: 'Logo';
+  font-size: 1.05rem;
+  margin-right: 10px;
+}
+
+header .logo::after {
+  content: '🌻';
+  font-size: 1.2rem;
+}
+
+header .logo img,
+header .logo span,
+header .logo svg {
+  display: none !important;
+}
+
+header h1 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  @media (min-width: 1024px) {
+    font-size: 1.35rem;
+  }
+}
+
+nav {
+  grid-area: nav;
+  background: var(--nav);
+  border-radius: var(--radius);
+  padding: 8px 10px;
+
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+
+  @media (min-width: 1024px) {
+    justify-content: flex-start;
+    padding: 8px 14px;
+  }
+}
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 6px 4px;
+  border-radius: 4px;
+}
+nav a:hover {
+  text-decoration: underline;
+}
+
+main {
+  grid-area: main;
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 16px;
+
+  @media (min-width: 1024px) {
+    padding: 18px;
+  }
+}
+
+aside {
+  grid-area: aside;
+  background: linear-gradient(180deg, var(--aside-top), var(--aside-bottom));
+  border-radius: var(--radius);
+  padding: 16px;
+
+  @media (min-width: 1024px) {
+    padding: 18px;
+  }
+}
+
+aside > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 6px;
+  font-size: 50px;
+  margin: 10px auto;
+  text-align: center;
+}
+
+footer {
+  grid-area: footer;
+  background: var(--footer);
+  color: #fff;
+  text-align: center;
+  border-radius: var(--radius);
+  padding: 10px;
+  font-weight: 700;
+}
+
+@media (min-width: 1024px) {
+  .container {
+    grid-template-columns: 1fr 360px;
+    grid-template-areas:
+      'header  header'
+      'nav     nav'
+      'main    aside'
+      'footer  footer';
+  }
+
+  aside > div {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    align-items: center;
+    column-gap: 4px;
+    row-gap: 8px;
+    padding-inline: 20px;
+    font-size: 54px;
+  }
+}
+
+aside > div {
+  font-size: 56px;
+  gap: 6px;
+}
+
+@media (min-width: 1024px) {
+  aside > div {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    align-items: center;
+
+    column-gap: 2px;
+    row-gap: 10px;
+    padding-inline: 18px;
+
+    font-size: 64px;
+  }
+}
+
+@media (min-width: 1024px) {
+  aside > div {
+    display: grid !important;
+    grid-template-columns: repeat(2, auto) !important;
+
+    justify-content: center !important;
+    column-gap: 10px !important;
+    row-gap: 14px !important;
+
+    font-size: 62px !important;
+    line-height: 1 !important;
+
+    padding-inline: 16px !important;
+  }
+
+  aside > div > span {
+    transform: none !important;
+  }
+}
+@media (min-width: 1024px) {
+  aside > div {
+    display: grid !important;
+    grid-template-columns: repeat(2, auto) !important;
+    justify-content: center !important;
+    column-gap: 10px !important;
+    row-gap: 14px !important;
+    font-size: 62px !important;
+    line-height: 1 !important;
+    padding-inline: 16px !important;
+
+    margin-top: 40px !important;
+  }
+}
