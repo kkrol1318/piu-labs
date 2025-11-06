@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Logowanie</title>
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <header class="container">
+      <h1>Logowanie</h1>
+      <nav class="breadcrumb">
+        <a href="index.html">Strona główna</a>
+        <span aria-hidden="true">/</span>
+        <span>Logowanie</span>
+      </nav>
+    </header>
+
+    <main class="container card">
+      <form action="https://httpbin.org/post" method="post" novalidate>
+        <label for="login">Login:</label>
+        <input
+          id="login"
+          name="login"
+          type="text"
+          required
+          placeholder="Twoja nazwa użytkownika"
+        />
+
+        <label for="haslo">Hasło:</label>
+        <input
+          id="haslo"
+          name="haslo"
+          type="password"
+          required
+          placeholder="••••••••"
+        />
+
+        <label class="inline">
+          <input type="checkbox" name="remember" />
+          Zapamiętaj mnie
+        </label>
+
+        <button type="submit">Zaloguj</button>
+      </form>
+
+      <p class="back"><a href="index.html">Powrót</a></p>
+    </main>
+  </body>
+</html>

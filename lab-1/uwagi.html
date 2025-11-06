@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Uwagi o formularzach</title>
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <header class="container">
+      <h1>Uwagi o formularzach</h1>
+      <nav class="breadcrumb">
+        <a href="index.html">Strona główna</a>
+        <span aria-hidden="true">/</span>
+        <span>Uwagi</span>
+      </nav>
+    </header>
+
+    <main class="container card prose">
+      <h2>Kiedy stosować formularze</h2>
+      <ul>
+        <li>
+          Gdy użytkownik ma <strong>przekazać dane</strong> aplikacji:
+          logowanie, rejestracja, zamówienia, kontakt.
+        </li>
+        <li>
+          Gdy potrzebna jest <strong>kontrola poprawności</strong> (np. e-mail,
+          liczba, data) i/lub <strong>zgody</strong>.
+        </li>
+      </ul>
+
+      <h2>Semantyka i dostępność</h2>
+      <ul>
+        <li>
+          <code>&lt;label for&gt;</code> łączy etykietę z polem – większy obszar
+          kliku i opis dla czytników.
+        </li>
+        <li>
+          Grupuj pokrewne pola w <code>&lt;fieldset&gt;</code> z
+          <code>&lt;legend&gt;</code> (np. „Publikacja pracy online”).
+        </li>
+        <li>
+          Zadbaj o <strong>kontrast</strong>, widoczny <strong>focus</strong> i
+          logiczną kolejność <kbd>Tab</kbd>.
+        </li>
+        <li>
+          Stosuj właściwe typy pól: <code>email</code>, <code>number</code>,
+          <code>date</code>, <code>color</code>,
+          <code>radio</code>/<code>checkbox</code>, <code>select</code>.
+        </li>
+      </ul>
+
+      <h2>Walidacja</h2>
+      <ul>
+        <li>
+          HTML5: <code>required</code>,
+          <code>min</code>/<code>max</code>/<code>step</code>,
+          <code>maxlength</code>, dopasowany <code>type</code>.
+        </li>
+        <li>
+          Walidacja po stronie klienta <em>nie wystarcza</em> – zawsze sprawdzaj
+          także po stronie serwera.
+        </li>
+      </ul>
+
+      <h2>Wysyłanie danych</h2>
+      <ul>
+        <li>
+          <strong>GET</strong> – dane w adresie (np. podgląd zgłoszenia do
+          konkursu).
+        </li>
+        <li>
+          <strong>POST</strong> – dane w treści żądania (logowanie, zmiany w
+          systemie), np. do <code>https://httpbin.org/post</code>.
+        </li>
+      </ul>
+
+      <p class="back"><a href="index.html">Powrót</a></p>
+    </main>
+  </body>
+</html>

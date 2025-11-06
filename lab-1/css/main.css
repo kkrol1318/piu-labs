@@ -1,0 +1,157 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #ffffff;
+  --fg: #111111;
+  --muted: #6b7280;
+  --link: #2563eb;
+  --card: #f9f9f9;
+  --border: #e5e7eb;
+  --field-bg: #ffffff;
+  --field-bdr: #bbb;
+  --btn: #4caf50;
+  --btn-hover: #45a049;
+  font-size: 16px;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+html,
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  line-height: 1.5;
+}
+
+.container {
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.25rem;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
+}
+
+h1 {
+  margin: 0.25rem 0 1rem;
+  font-size: 2rem;
+  font-weight: 800;
+}
+h2 {
+  margin: 1rem 0 0.5rem;
+  font-size: 1.25rem;
+}
+.prose ul {
+  margin: 0.25rem 0 1rem 1.25rem;
+}
+
+.breadcrumb {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+.breadcrumb a {
+  color: var(--link);
+  text-decoration: none;
+}
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+a {
+  color: var(--link);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+.back {
+  text-align: right;
+  margin-top: 1rem;
+}
+
+form {
+  display: grid;
+  gap: 0.75rem;
+}
+label {
+  display: block;
+  font-weight: 600;
+}
+label.inline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+}
+
+input[type='text'],
+input[type='password'],
+input[type='email'],
+input[type='number'],
+input[type='date'],
+select,
+textarea {
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid var(--field-bdr);
+  border-radius: 8px;
+  background: var(--field-bg);
+  color: var(--fg);
+  font-size: 1rem;
+  transition: border-color 0.12s ease, box-shadow 0.12s ease;
+}
+textarea {
+  min-height: 120px;
+}
+
+input:hover,
+select:hover,
+textarea:hover {
+  border-color: #94a3b8;
+}
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #60a5fa;
+  box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.25);
+  outline: none;
+}
+
+button {
+  padding: 0.9rem 1rem;
+  border: none;
+  border-radius: 10px;
+  background: var(--btn);
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  transition: background 0.15s ease, transform 0.05s ease, box-shadow 0.1s ease;
+}
+button:hover {
+  background: var(--btn-hover);
+  filter: brightness(0.98);
+}
+button:active {
+  transform: translateY(1px);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+}
+
+button,
+input[type='radio'],
+input[type='checkbox'],
+label:hover {
+  cursor: pointer;
+}
