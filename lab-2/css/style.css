@@ -1,19 +1,140 @@
-/* Minimalny reset  */
 html {
-  font-size: 16px; /* bazowy rozmiar czcionki */
-  font-family: system-ui, sans-serif; /* font systemowy */
-  line-height: 1.5; /* lepsza czytelność */
+  font-size: 16px;
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
 }
 body {
   margin: 1rem;
   padding: 0;
+  background: #fff;
+  color: #111;
 }
 
 a {
-  color: #0066cc; /* niebieski kolor linków */
-  text-decoration: none; /* bez podkreślenia */
-  font-size: 1.4rem;
+  color: #0066cc;
+  text-decoration: none;
+  font-size: 1.2rem;
 }
 a:hover {
-  text-decoration: underline; /* podkreślenie przy najechaniu */
+  text-decoration: underline;
+}
+
+h1 {
+  font-size: 2rem;
+  color: #222;
+  margin-bottom: 0.75rem;
+}
+h2 {
+  font-size: 1.25rem;
+  color: #222;
+  margin-top: 1.5rem;
+}
+
+.container {
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.card {
+  background: #f9f9f9;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+nav a {
+  font-size: 1.1rem;
+}
+
+form {
+  display: grid;
+  gap: 0.75rem;
+}
+label {
+  display: block;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #111;
+}
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+  background: #fff;
+  font-size: 1rem;
+  font-family: inherit;
+  color: #111;
+}
+textarea {
+  min-height: 100px;
+}
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid #0066cc;
+  border-color: #0066cc;
+}
+
+button {
+  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: 6px;
+  background: #4caf50;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+button:hover {
+  background: #45a049;
+}
+
+a[href='..'] {
+  margin-top: 1.5rem;
+  display: inline-block;
+  font-size: 1rem;
+  color: #444;
+}
+a[href='..']:hover {
+  color: #000;
+  text-decoration: underline;
+}
+
+a {
+  font-size: inherit !important;
+}
+
+.nav a {
+  font-size: 1rem !important;
+  font-weight: 400 !important;
+}
+
+.container {
+  max-width: 760px !important;
+}
+.card {
+  background: #f9f9f9 !important;
+  border: 1px solid #e5e7eb !important;
+  border-radius: 12px !important;
+  padding: 1rem 1.25rem !important;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06) !important;
+}
+
+html,
+body {
+  font-size: 16px !important;
+  line-height: 1.5 !important;
+  font-family: system-ui, sans-serif !important;
+  font-weight: 400 !important;
 }
