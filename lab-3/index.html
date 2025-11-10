@@ -4,9 +4,71 @@
     <meta charset="UTF-8" />
     <title>Lab 3</title>
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/polo.css" />
   </head>
   <body>
     <h1>Lab 3</h1>
     <a href="..">Powrót</a>
+
+    <main class="polo">
+      <article class="product" aria-label="Karta produktu: koszulka polo">
+        <div
+          class="product__media"
+          role="img"
+          aria-label="Zdjęcie koszulki polo"
+        ></div>
+
+        <section class="product__info">
+          <h2 class="product__title">Koszulka Polo</h2>
+          <p class="product__desc">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque,
+            impedit? Deserunt, beatae!
+          </p>
+
+          <dl class="product__specs">
+            <div>
+              <dt>Kolor</dt>
+              <dd>
+                <form class="product__colors" aria-label="Wybierz kolor">
+                  <input type="radio" id="color-blue" name="color" checked />
+                  <label for="color-blue" title="Niebieski"></label>
+
+                  <input type="radio" id="color-red" name="color" />
+                  <label for="color-red" title="Czerwony"></label>
+
+                  <input type="radio" id="color-green" name="color" />
+                  <label for="color-green" title="Zielony"></label>
+
+                  <input type="radio" id="color-yellow" name="color" />
+                  <label for="color-yellow" title="Żółty"></label>
+                </form>
+              </dd>
+            </div>
+
+            <div>
+              <dt>Rozmiar</dt>
+              <dd>
+                <form class="product__sizes" aria-label="Wybierz rozmiar">
+                  <input type="radio" id="size-s" name="size" checked />
+                  <label for="size-s">S</label>
+
+                  <input type="radio" id="size-m" name="size" />
+                  <label for="size-m">M</label>
+
+                  <input type="radio" id="size-l" name="size" />
+                  <label for="size-l">L</label>
+
+                  <input type="radio" id="size-xl" name="size" />
+                  <label for="size-xl">XL</label>
+                </form>
+              </dd>
+            </div>
+          </dl>
+
+          <p class="product__price">59,99 zł</p>
+          <button class="product__buy" type="button">Do koszyka</button>
+        </section>
+      </article>
+    </main>
   </body>
 </html>
