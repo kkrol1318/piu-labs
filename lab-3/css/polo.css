@@ -222,3 +222,42 @@ label[for='color-yellow'] {
   content: '🛒';
   font-size: 1.05em;
 }
+
+.product__sizes label {
+  transition: background-color 0.25s ease, color 0.25s ease, transform 0.2s ease,
+    box-shadow 0.25s ease;
+}
+
+.product__sizes input:checked + label {
+  transform: scale(1.1);
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+  box-shadow: 0 0 12px var(--accent);
+}
+
+.product__sizes label:not(:checked) {
+  transform: scale(1);
+  box-shadow: none;
+}
+
+.product__colors label {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.product__colors label:hover {
+  transform: scale(1.15);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+#color-blue:checked + label[for='color-blue'],
+#color-red:checked + label[for='color-red'],
+#color-green:checked + label[for='color-green'],
+#color-yellow:checked + label[for='color-yellow'] {
+  transform: scale(1.25);
+  box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.1), 0 0 12px var(--accent);
+}
+
+.product__colors label:active {
+  transform: scale(1.05);
+}
